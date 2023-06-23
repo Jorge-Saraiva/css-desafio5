@@ -464,7 +464,7 @@ footer {
     }
 
     .card-content:hover {
-        scale: 1.03;
+        scale: 1.05;
     }
 
     .footer-content ul {
@@ -528,5 +528,9 @@ footer {
 
     .card-container {
         padding: 24px;
+    }
+
+    .card-content:hover {
+        scale: 1.02;
     }
 }
