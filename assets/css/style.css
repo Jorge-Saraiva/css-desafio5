@@ -1,0 +1,532 @@
+@import url('reset.css');
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.header-content {
+    position: relative;
+    padding: 100px 0 300px;
+    background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite alternate;
+}
+
+.header-content::after {
+    content: "";
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, var(--primary-color), transparent);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+
+    background: var(--nav-bg-color);
+    padding: 32px 24px;
+    z-index: 1;
+}
+
+#logo img {
+    height: 16.6px;
+}
+
+.sign-in {
+    display: flex;
+    gap: 24px;
+}
+
+.sign-in button,
+.sign-in button a {
+    color: #FFFFFF;
+    font-size: 12px;
+    border: none;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.sign-in button {
+    background-color: transparent;
+}
+
+.sign-in button a {
+    padding: 8px 26px;
+    border-radius: 500px;
+    text-decoration: none;
+    background-color: var(--tertiary-color);
+    transition: background 1s, outline 1s, transform 1s;
+}
+
+.sign-in button a:hover {
+    background-color: var(--btn-link-bg-color);
+    color: var(--btn-link-color);
+}
+
+/* SECTION HEADER CONTENT */
+header .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+
+    padding: 300px 40px 300px;
+}
+
+header .companies ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 0;
+}
+
+header .content h1,
+h2 {
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+header .content h1 {
+    font-size: 3rem;
+}
+
+header .content h2 {
+    font-weight: lighter;
+    font-size: 2rem;
+}
+
+header .divider {
+    width: 70%;
+    max-width: 700px;
+    height: 5px;
+    background: var(--divider-bg-color);
+}
+
+/* OFFER PRICE */
+section p {
+    font-weight: lighter;
+}
+
+header .subscription p:nth-child(1) {
+    font-size: 1.25rem;
+    font-family: 'Quicksand', sans-serif;
+}
+
+header .subscription span#price {
+    font-size: 2.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+
+header #btn-subscription button a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+header #btn-subscription button {
+    padding: 16px 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+
+    border: none;
+    border-radius: 500px;
+
+    background: var(--btn-bg-color-gradient);
+    background-size: 250%;
+
+    filter: brightness(1.1);
+    animation: wiggle 2.2s linear infinite;
+    transition: background 1s, outline 1s, transform 1s;
+}
+
+header #btn-subscription button:hover {
+    transform: scale(1.05);
+    color: var(--text-color);
+    background-color: transparent;
+    background-position: 100%;
+    outline: 2px solid var(--secondary-color);
+}
+
+@keyframes wiggle {
+
+    0%,
+    10% {
+        transform: rotate(0);
+    }
+
+    15% {
+        transform: rotate(-15deg);
+    }
+
+    20% {
+        transform: rotate(10deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    35% {
+        transform: rotate(-10deg);
+    }
+
+    40%,
+    100% {
+        transform: rotate(0);
+    }
+}
+
+header #condition p {
+    max-width: 300px;
+}
+
+/* MAIN */
+main .subscriptions-plans {
+    background: url("../images/background-movies-series.png") no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+main #plans {
+    padding: 0 24px;
+}
+
+main #plans h2 {
+    text-transform: initial;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+main .platforms-plans {
+    margin: 40px 0;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+main .subscription-prices h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+main .subscription-prices span {
+    font-family: "Raleway", sans-serif;
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+main .platform-devices {
+    background: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 40px;
+    min-height: 630px;
+    max-width: 536px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.platform-descriptions__items ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 32px;
+
+    padding: 0;
+    margin-top: 32px;
+}
+
+.platform-descriptions__items ul li {
+    text-align: left;
+    padding: 0 14px;
+}
+
+.platform-descriptions__items ul li:before {
+    content: "+";
+    font-size: 2rem;
+    position: absolute;
+    margin-left: -25px;
+    margin-top: -10px;
+}
+
+.platform-devices button {
+    background: var(--btn-bg-color-gradient);
+    padding: 16px 40px;
+    border-radius: 500px;
+    font-weight: 700;
+    color: var(--text-color);
+    letter-spacing: 4px;
+    border: none;
+    font-size: 14px;
+    transition: background 1s, outline 1s, transform 1s;
+    background-size: 250%;
+}
+
+.platform-devices button:hover {
+    background-color: transparent;
+    background-position: 100%;
+    outline: 2px solid var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.discover-content {
+    margin: 100px auto;
+    padding: 24px;
+}
+
+.discover-content h2 {
+    font-size: 2rem;
+    text-transform: initial;
+    font-weight: 500;
+}
+
+.card-container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(6, 100%);
+    grid-auto-flow: column;
+    overflow: auto hidden;
+    gap: 32px;
+}
+
+.card-content {
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid transparent;
+    transition: transform 0.8s, background 0.8s, border 1s;
+}
+
+.card-content:hover .image-content {
+    opacity: 0;
+}
+
+.card-content:nth-child(1):hover {
+    border: 2px solid var(--tertiary-color);
+    background-image: url("../images/hbo-hover_0.webp");
+}
+
+/* Max Originals Content */
+.card-content:nth-child(2):hover {
+    border: 2px solid var(--tertiary-color);
+    background-image: url("../images/MAX-Hover.webp");
+}
+
+/* DC Content */
+.card-content:nth-child(3):hover {
+    border: 2px solid var(--tertiary-color);
+    background-image: url("../images/DC-Hover.webp");
+}
+
+/* WB Content */
+.card-content:nth-child(4):hover {
+    border: 2px solid var(--tertiary-color);
+    background-image: url("../images/WB-Hover.webp");
+}
+
+/* CN Content */
+.card-content:nth-child(5):hover {
+    border: 2px solid var(--tertiary-color);
+    background-image: url("../images/CN-Hover.png");
+}
+
+/* Champions League Content */
+.card-content:nth-child(6):hover {
+    border: 2px solid var(--tertiary-color);
+    background-image: url("../images/UCL-Hover.webp");
+}
+
+.image-content {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 2s;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 24px;
+}
+
+.footer-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-content ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--link-color);
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: color 0.5s;
+}
+
+.footer-content ul li a:hover {
+    color: var(--text-color);
+}
+
+.rights {
+    margin: 16px 0;
+    color: var(--link-color);
+}
+
+.rights p {
+    font-weight: 300;
+    font-size: 0.75rem;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.social-medias {
+    margin-top: 80px;
+}
+
+.social-medias ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 481px) {
+    nav {
+        flex-direction: row;
+        padding: 12px 16px;
+    }
+
+    #logo img {
+        height: 26.6px;
+    }
+
+    .subscription-prices {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .subscription-prices p span {
+        font-size: 2rem;
+    }
+
+    .platform-descriptions__items ul li {
+        font-size: 1.25rem;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        padding: 10px;
+    }
+
+    .card-content {
+        transition: scale 1s;
+    }
+
+    .card-content:hover {
+        scale: 1.05;
+    }
+
+    .footer-content ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    main .platforms-plans {
+        align-items: center;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 1141px) {
+    main .platforms-plans {
+        margin: 40px 0;
+        padding: 0 24px;
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+        justify-content: center;
+    }
+
+    .platforms-plans {
+        display: flex;
+        justify-content: space-around;
+        gap: 80px;
+        margin: 40px 0;
+        perspective: 2000px;
+        perspective-origin: top;
+    }
+
+    .platform-devices {
+        background: var(--card-bg-color);
+        padding: 40px 60px;
+        border-radius: 8px;
+        display: flex;
+        min-height: 600px;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 1s ease-in-out;
+    }
+
+    .platforms-plans:has(.platform-devices:nth-child(1):hover) .platform-devices:nth-child(2) {
+        transform: rotateY(-45deg);
+    }
+
+    .platforms-plans:has(.platform-devices:nth-child(2):hover) .platform-devices:nth-child(1) {
+        transform: rotateY(45deg);
+    }
+
+    .card-container {
+        padding: 15px;
+    }
+}
